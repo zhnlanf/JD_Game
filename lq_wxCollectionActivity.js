@@ -9,14 +9,14 @@ JD_CART_REMOVESIZE || 20; // 运行一次取消多全部已关注的商品。数
 JD_CART_REMOVEALL || true;    //是否清空，如果为false，则上面设置了多少就只删除多少条
 7 7 7 7 7 jd_wxCollectionActivity.js
 
-活动环境变量参考 ACTIVITY_ID="" 多id & 分开, ACTIVITY_ALL 不判断黑号,默认判断,如果不需要判断 ACTIVITY_ALL = flase
+活动环境变量参考 COLLECTION_ID="" 多id & 分开, ACTIVITY_ALL 不判断黑号,默认判断,如果不需要判断 ACTIVITY_ALL = flase
 
 脚本加密!!!介意别跑!!!
 脚本加密!!!介意别跑!!!
 脚本加密!!!介意别跑!!!
 脚本加密!!!介意别跑!!!
 */
-const $ = new Env('加购物车抽奖');
+const $ = new Env('lq加购物车抽奖');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = message = '' ,isPush = false;
@@ -27,11 +27,11 @@ let lz_cookie = {}
 if (process.env.ACTIVITY_ALL && process.env.ACTIVITY_ALL != "") {
     activity_all = process.env.ACTIVITY_ALL;
 }
-if (process.env.ACTIVITY_ID && process.env.ACTIVITY_ID != "") {
-    if (process.env.ACTIVITY_ID.indexOf('&') > -1) {
-        activityIdList = process.env.ACTIVITY_ID.split('&');
+if (process.env.COLLECTION_ID && process.env.COLLECTION_ID != "") {
+    if (process.env.COLLECTION_ID.indexOf('&') > -1) {
+        activityIdList = process.env.COLLECTION_ID.split('&');
     } else {
-        activityIdList = [process.env.ACTIVITY_ID];
+        activityIdList = [process.env.COLLECTION_ID];
     }
   }
   activityIdList = [...new Set(activityIdList.filter(item => !!item))]
