@@ -1,6 +1,18 @@
+/*
+甘露殿-https://t.me/jdredrain
+
+自动车监控脚本-M幸运抽奖
+https://raw.githubusercontent.com/msechen/jdrain/main/m_jd_wx_addCart.js
+
+环境变量
+M_WX_LUCK_DRAW_URL  活动ID 
+
+即时任务，无需cron
+
+*/
 let mode = __dirname.includes('/home/magic/Work/wools/magic/raw')
 const {Env} = mode ? require('../magic') : require('./magic')
-const $ = new Env('M幸运抽奖');
+const $ = new Env('自动车-M幸运抽奖');
 $.lz = 'LZ_TOKEN_KEY=lztokef1eb8494b0af868bd18bdaf8;LZ_TOKEN_VALUE=Aa5RE8RuY4X3zA==;';
 $.activityUrl = process.env.M_WX_LUCK_DRAW_URL ? process.env.M_WX_LUCK_DRAW_URL
     : '';
@@ -155,6 +167,7 @@ $.after = async function () {
         }
         $.msg.push(message)
         $.msg.push($.activityUrl);
+        $.msg.push('\n甘露殿【https://t.me/jdredrain】')
     }
 }
 $.run({filename: __filename}).catch(
@@ -308,4 +321,3 @@ function taskPostUrl(url, body) {
         }
     }
 }
-
