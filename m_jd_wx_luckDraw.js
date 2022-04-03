@@ -223,5 +223,5 @@ $.after = async function () {
     $.msg.push(message)
     $.msg.push($.activityUrl);
 }
-$.run({whitelist: ['1-5'], wait: [3000, 5000]}).catch(
+$.run({whitelist: ['1-60'], wait: [3000, 5000]}).catch(
     reason => $.log(reason));
