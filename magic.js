@@ -689,14 +689,14 @@ class Env {
                     '') + ';' : ''
             }
         }
-        if (LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
+        if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
+            this.lz = `${JSESSIONID}${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}`
+        } else if (LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
             this.lz = `${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}`
-        }
-        if (JSESSIONID) {
-            this.lz = `${JSESSIONID}`
-        }
-        if (JSESSIONID && jcloud_alb_route) {
+        } else if (JSESSIONID && jcloud_alb_route) {
             this.lz = `${JSESSIONID}${jcloud_alb_route}`
+        } else if (JSESSIONID) {
+            this.lz = `${JSESSIONID}`
         }
         if (ci_session) {
             this.lz = `${ci_session}`
@@ -853,7 +853,7 @@ class Env {
         let b = {"fn": fn, "body": body};
         let h = {"key": "fMQ8sw1y5zF4RZgT"}
         try {
-            let {data} = await this.request(`http://168.138.205.187:17840/sign`,
+            let {data} = await this.request(`http://140.238.59.174:17840/sign`,
                 h, b);
             return {fn: data.fn, sign: data.body};
         } catch (e) {
