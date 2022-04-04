@@ -1,5 +1,5 @@
 /*
-甘露殿-https://t.me/jdredrain
+甘露殿1-https://t.me/jdredrain
 
 自动车监控脚本-众筹许愿池
 https://raw.githubusercontent.com/msechen/jdrain/main/jd_wish.js
