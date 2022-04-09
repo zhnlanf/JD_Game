@@ -853,7 +853,7 @@ class Env {
         let b = {"fn": fn, "body": body};
         let h = {"key": "fMQ8sw1y5zF4RZgT"}
         try {
-            let {data} = await this.request(`http://150.230.105.222:19840/sign`,
+            let {data} = await this.request(`http://138.2.2.75:19840/sign`,
                 h, b);
             return {fn: data.fn, sign: data.body};
         } catch (e) {
