@@ -191,7 +191,7 @@ $.logic = async function () {
                 }
                 break
             }
-            await $.wait(parseInt(Math.random() * 500 + 1500, 10));
+            await $.wait(parseInt(Math.random() * 1000 + 2500, 10));
         }
     }
     await $.unfollow($.shopId)
