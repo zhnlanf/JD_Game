@@ -28,8 +28,8 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 CryptoScripts()
 $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
 var timestamp = new Date().getTime()
-const VENDER_ID = process.env.VENDER_ID || "";
-const OPENCARD_BEAN = process.env.OPENCARD_BEAN || "10";
+const VENDER_ID = process.env.lqVENDER_ID || "";
+const OPENCARD_BEAN = process.env.lqOPENCARD_BEAN || "10";
 
 let cookiesArr = [],
     cookie = '';
