@@ -1,4 +1,7 @@
 //问题反馈:https://t.me/Wall_E_Channel
+/*
+7 7 7 7 7 m_jd_wx_collectCard.js
+*/
 let mode = __dirname.includes('magic')
 const {Env} = mode ? require('./magic') : require('./magic')
 const $ = new Env('M集卡抽奖');
@@ -234,5 +237,5 @@ $.after = async function () {
         $.msg.push($.activityUrl);
     }
 }
-$.run({whitelist: ['1-60'], wait: [1000, 3000]}).catch(
+$.run({whitelist: ['1-5'], wait: [1000, 3000]}).catch(
     reason => $.log(reason));
