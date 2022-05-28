@@ -1,4 +1,7 @@
 //问题反馈:https://t.me/Wall_E_Channel
+/*
+7 7 7 7 7 m_jd_wx_luckDraw.js
+*/
 let mode = __dirname.includes('magic')
 const {Env} = mode ? require('./magic') : require('./magic')
 const $ = new Env('M幸运抽奖');
@@ -191,7 +194,7 @@ $.logic = async function () {
                 }
                 break
             }
-            await $.wait(parseInt(Math.random() * 1000 + 2500, 10));
+            await $.wait(parseInt(Math.random() * 500 + 1500, 10));
         }
     }
     await $.unfollow($.shopId)
@@ -223,5 +226,6 @@ $.after = async function () {
     $.msg.push(message)
     $.msg.push($.activityUrl);
 }
-$.run({whitelist: ['1-60'], wait: [3000, 5000]}).catch(
+$.run({whitelist: ['1-5'], wait: [3000, 5000]}).catch(
     reason => $.log(reason));
+
